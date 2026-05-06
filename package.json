@@ -1,0 +1,14 @@
+{
+  "name": "journal",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "scripts": {
+    "sanitize:data": "node ./scripts/sanitize-data.mjs",
+    "build": "node ./scripts/build-runtime.mjs",
+    "preview": "node ./scripts/preview.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.11"
+  }
+}

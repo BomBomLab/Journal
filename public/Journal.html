@@ -1,0 +1,331 @@
+<!DOCTYPE html><html data-src-ver="177d3bce" lang="en" style="--paper: oklch(0.970 0.012 75); --paper-2: oklch(0.988 0.008 80); --paper-edge: oklch(0.945 0.014 70); --ink: oklch(0.305 0.018 55); --ink-2: oklch(0.480 0.014 58); --ink-3: oklch(0.680 0.012 62); --ink-4: oklch(0.820 0.010 68); --rule: oklch(0.880 0.014 65); --rule-soft: oklch(0.935 0.012 70); --accent: oklch(0.660 0.070 42); --accent-ink: oklch(0.520 0.080 40); --accent-wash: color-mix(in oklch, oklch(0.955 0.022 50) 55%, var(--paper-2)); --accent-dot: oklch(0.880 0.040 48); font-size: 16px;"><head>
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Journal</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+
+<style>
+  /* ─────────── Design tokens (default: Warm Paper) ─────────── */
+  :root {
+    /* Warm Paper */
+    --paper:        oklch(0.970 0.012 75);
+    --paper-2:      oklch(0.988 0.008 80);
+    --paper-edge:   oklch(0.945 0.014 70);
+
+    --ink:          oklch(0.305 0.018 55);
+    --ink-2:        oklch(0.480 0.014 58);
+    --ink-3:        oklch(0.680 0.012 62);
+    --ink-4:        oklch(0.820 0.010 68);
+
+    --rule:         oklch(0.880 0.014 65);
+    --rule-soft:    oklch(0.935 0.012 70);
+
+    --accent:       oklch(0.660 0.070 42);
+    --accent-ink:   oklch(0.520 0.080 40);
+    --accent-wash:  oklch(0.955 0.022 50);
+    --accent-dot:   oklch(0.880 0.040 48);
+  }
+
+  html, body { background: var(--paper); color: var(--ink); }
+  body {
+    margin: 0;
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    min-height: 100vh;
+  }
+
+  .font-serif { font-family: 'Cormorant Garamond', 'Garamond', serif; }
+
+  /* Paper grain — subtle noise via layered radial gradients */
+  .paper-surface {
+    background-color: var(--paper-2);
+    background-image:
+      radial-gradient(oklch(0.88 0.014 65 / 0.22) 0.5px, transparent 0.5px),
+      radial-gradient(oklch(0.82 0.014 65 / 0.12) 0.5px, transparent 0.5px);
+    background-size: 3px 3px, 7px 7px;
+    background-position: 0 0, 1px 2px;
+  }
+
+  /* Dot grid (notes area) */
+  .dot-grid {
+    background-image: radial-gradient(var(--ink-4) 0.9px, transparent 0.9px);
+    background-size: 14px 14px;
+  }
+
+  /* Line ruled */
+  .line-grid {
+    background-image: linear-gradient(to bottom, transparent calc(2rem - 1px), var(--rule-soft) calc(2rem - 1px), var(--rule-soft) 2rem, transparent 2rem);
+    background-size: 100% 2rem;
+  }
+
+  /* Graph/grid */
+  .graph-grid {
+    background-image:
+      linear-gradient(to right, var(--rule-soft) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--rule-soft) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+
+  /* Page binding shadow (book spine) */
+  .spine-shadow-r {
+    box-shadow:
+      inset -12px 0 24px -14px oklch(0.70 0.02 55 / 0.35),
+      0 30px 60px -20px oklch(0.30 0.02 55 / 0.18),
+      0 2px 6px oklch(0.30 0.02 55 / 0.06);
+  }
+  .spine-shadow-l {
+    box-shadow:
+      inset 12px 0 24px -14px oklch(0.70 0.02 55 / 0.35),
+      0 30px 60px -20px oklch(0.30 0.02 55 / 0.18),
+      0 2px 6px oklch(0.30 0.02 55 / 0.06);
+  }
+  .page-shadow {
+    box-shadow:
+      0 30px 60px -24px oklch(0.30 0.02 55 / 0.22),
+      0 2px 6px oklch(0.30 0.02 55 / 0.06);
+  }
+
+  /* Section label rule */
+  .eyebrow {
+    font-size: 9.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    font-weight: 500;
+  }
+
+  /* Unobtrusive inputs */
+  input, textarea {
+    font: inherit;
+    color: inherit;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    width: 100%;
+  }
+  input::placeholder, textarea::placeholder { color: var(--ink-4); font-style: italic; }
+
+  /* Checkbox visuals */
+  .tick {
+    width: 14px; height: 14px; flex: none;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    background: transparent;
+    display: inline-grid; place-items: center;
+    cursor: default;
+    transition: background .15s ease, border-color .15s ease;
+  }
+  .tick[data-on="true"] {
+    background: var(--accent-wash);
+    border-color: var(--accent);
+  }
+  .tick[data-on="true"]::after {
+    content: "";
+    width: 7px; height: 7px;
+    background: var(--accent);
+    border-radius: 1px;
+  }
+
+  /* Pill button group */
+  .pill-group {
+    display: inline-flex;
+    padding: 3px;
+    border-radius: 999px;
+    background: var(--paper-edge);
+    border: 1px solid var(--rule-soft);
+    gap: 2px;
+  }
+  .pill {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 11.5px;
+    letter-spacing: 0.02em;
+    color: var(--ink-2);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background .2s, color .2s, box-shadow .2s;
+  }
+  .pill[data-on="true"] {
+    background: var(--paper-2);
+    color: var(--ink);
+    box-shadow: 0 1px 2px oklch(0.30 0.02 55 / 0.08), 0 0 0 1px var(--rule-soft);
+  }
+  .pill:hover:not([data-on="true"]) { color: var(--ink); }
+
+  .icon-btn {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    width: 28px; height: 28px;
+    border-radius: 999px;
+    display: inline-grid; place-items: center;
+    color: var(--ink-3);
+    transition: background .15s, color .15s;
+    cursor: pointer;
+  }
+  .icon-btn:hover { background: var(--paper-edge); color: var(--ink); }
+
+  .accent-chip {
+    display: inline-block;
+    background: var(--accent-wash);
+    color: var(--accent-ink);
+    padding: 1px 7px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+  }
+
+  .accent-dot {
+    width: 20px; height: 20px;
+    border-radius: 999px;
+    background: var(--accent-wash);
+    color: var(--accent-ink);
+    display: inline-grid; place-items: center;
+    font-size: 10px; font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .divider-rule { border: 0; border-top: 1px solid var(--rule); flex: 1; }
+
+  /* Monthly cell */
+  .cal-cell {
+    background: var(--paper-2);
+    min-height: 96px;
+    padding: 8px 10px;
+    position: relative;
+    transition: background .15s;
+  }
+  .cal-cell:hover { background: var(--accent-wash); }
+  .cal-cell[data-muted="true"] { background: var(--paper); color: var(--ink-4); }
+  .cal-cell[data-today="true"] .cal-num {
+    background: var(--accent);
+    color: var(--paper-2);
+  }
+  .cal-num {
+    display: inline-grid; place-items: center;
+    width: 22px; height: 22px;
+    border-radius: 999px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    color: var(--ink-2);
+  }
+  .event-pill {
+    display: block;
+    font-size: 10.5px;
+    line-height: 1.35;
+    padding: 2px 6px;
+    border-radius: 3px;
+    background: var(--accent-wash);
+    color: var(--accent-ink);
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    margin-top: 4px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .event-pill[data-kind="note"] {
+    background: var(--paper-edge);
+    color: var(--ink-2);
+    font-style: normal;
+    font-family: 'Inter', sans-serif;
+    font-size: 9.5px;
+    letter-spacing: 0.04em;
+  }
+
+  /* Hand-drawn underline for week number */
+  .week-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1;
+  }
+
+  /* Fade-in (disabled — was getting stuck at frame-0 opacity in some sandboxes) */
+  .fadein { opacity: 1; }
+
+  /* Focus ring for accessibility (keyboard users) */
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+
+  /* App shell */
+  .app-bg {
+    min-height: 100vh;
+    background:
+      radial-gradient(1200px 600px at 20% -10%, var(--accent-wash), transparent 60%),
+      radial-gradient(900px 500px at 90% 110%, var(--paper-edge), transparent 60%),
+      var(--paper);
+    padding: 40px 28px 80px;
+  }
+
+  .max-shell { max-width: 1240px; margin: 0 auto; }
+
+  .pagebreak {
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, oklch(0.50 0.02 55 / 0.20), transparent);
+  }
+
+  @media (max-width: 860px) {
+    .app-bg {
+      padding: 20px 14px 40px;
+      overflow-x: hidden;
+    }
+
+    .max-shell {
+      max-width: 100%;
+    }
+
+    .pill-group {
+      width: auto;
+      max-width: 100%;
+      justify-content: center;
+      flex-wrap: nowrap;
+    }
+
+    .pill {
+      flex: 0 0 auto;
+      min-width: 0;
+      text-align: center;
+    }
+
+    .pagebreak {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, oklch(0.50 0.02 55 / 0.20), transparent);
+    }
+
+    .cal-cell {
+      min-height: 76px;
+      padding: 6px 7px;
+    }
+
+    .cal-num {
+      width: 20px;
+      height: 20px;
+      font-size: 12px;
+    }
+
+    input,
+    textarea {
+      font-size: 16px;
+    }
+  }
+</style>
+<body data-grain="on">
+<div id="root"></div>
+
+<script src="vendor/react.development.js"></script>
+<script src="vendor/react-dom.development.js"></script>
+<script src="runtime.js"></script>
+
+
+</body></html>

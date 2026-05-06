@@ -1,0 +1,474 @@
+{
+  "version": 1,
+  "timezone": "Asia/Shanghai",
+  "taxonomy": {
+    "categories": [
+      {
+        "id": "life",
+        "label": "Life",
+        "color": "var(--cat-life)",
+        "children": [
+          {
+            "id": "life.meal",
+            "label": "Meals"
+          },
+          {
+            "id": "life.hygiene",
+            "label": "Hygiene"
+          },
+          {
+            "id": "life.chores",
+            "label": "Chores"
+          },
+          {
+            "id": "life.shopping",
+            "label": "Shopping"
+          },
+          {
+            "id": "life.errand",
+            "label": "Errands"
+          },
+          {
+            "id": "life.other",
+            "label": "Other Life"
+          }
+        ]
+      },
+      {
+        "id": "work",
+        "label": "Work",
+        "color": "var(--cat-work)",
+        "children": [
+          {
+            "id": "work.coding",
+            "label": "Coding"
+          },
+          {
+            "id": "work.meeting",
+            "label": "Meetings"
+          },
+          {
+            "id": "work.writing",
+            "label": "Writing"
+          },
+          {
+            "id": "work.communication",
+            "label": "Communication"
+          },
+          {
+            "id": "work.other",
+            "label": "Other Work"
+          }
+        ]
+      },
+      {
+        "id": "study",
+        "label": "Study",
+        "color": "var(--cat-study)",
+        "children": [
+          {
+            "id": "study.reading",
+            "label": "Reading"
+          },
+          {
+            "id": "study.course",
+            "label": "Courses"
+          },
+          {
+            "id": "study.practice",
+            "label": "Practice"
+          },
+          {
+            "id": "study.review",
+            "label": "Review"
+          },
+          {
+            "id": "study.other",
+            "label": "Other Study"
+          }
+        ]
+      },
+      {
+        "id": "exercise",
+        "label": "Exercise",
+        "color": "var(--cat-exercise)",
+        "children": [
+          {
+            "id": "exercise.walk",
+            "label": "Walks"
+          },
+          {
+            "id": "exercise.workout",
+            "label": "Workouts"
+          },
+          {
+            "id": "exercise.stretch",
+            "label": "Stretching"
+          },
+          {
+            "id": "exercise.other",
+            "label": "Other Exercise"
+          }
+        ]
+      },
+      {
+        "id": "entertainment",
+        "label": "Entertainment",
+        "color": "var(--cat-entertainment)",
+        "children": [
+          {
+            "id": "entertainment.video",
+            "label": "Video"
+          },
+          {
+            "id": "entertainment.game",
+            "label": "Games"
+          },
+          {
+            "id": "entertainment.social_media",
+            "label": "Social Media"
+          },
+          {
+            "id": "entertainment.music",
+            "label": "Music"
+          },
+          {
+            "id": "entertainment.other",
+            "label": "Other Entertainment"
+          }
+        ]
+      },
+      {
+        "id": "health",
+        "label": "Health",
+        "color": "var(--cat-health)",
+        "children": [
+          {
+            "id": "health.rest",
+            "label": "Recovery"
+          },
+          {
+            "id": "health.medication",
+            "label": "Medication"
+          },
+          {
+            "id": "health.pain",
+            "label": "Symptom Care"
+          },
+          {
+            "id": "health.hospital",
+            "label": "Medical Visit"
+          },
+          {
+            "id": "health.other",
+            "label": "Other Health"
+          }
+        ]
+      },
+      {
+        "id": "social",
+        "label": "Social",
+        "color": "var(--cat-social)",
+        "children": [
+          {
+            "id": "social.chat",
+            "label": "Chat"
+          },
+          {
+            "id": "social.call",
+            "label": "Calls"
+          },
+          {
+            "id": "social.family",
+            "label": "Family Time"
+          },
+          {
+            "id": "social.other",
+            "label": "Other Social"
+          }
+        ]
+      },
+      {
+        "id": "care",
+        "label": "Care",
+        "color": "var(--cat-care)",
+        "children": [
+          {
+            "id": "care.pet",
+            "label": "Pet Care"
+          },
+          {
+            "id": "care.household",
+            "label": "Household Care"
+          },
+          {
+            "id": "care.self",
+            "label": "Self Care"
+          },
+          {
+            "id": "care.other",
+            "label": "Other Care"
+          }
+        ]
+      },
+      {
+        "id": "travel",
+        "label": "Travel",
+        "color": "var(--cat-travel)",
+        "children": [
+          {
+            "id": "travel.commute",
+            "label": "Commute"
+          },
+          {
+            "id": "travel.transit",
+            "label": "Transit"
+          },
+          {
+            "id": "travel.other",
+            "label": "Other Travel"
+          }
+        ]
+      },
+      {
+        "id": "rest",
+        "label": "Rest",
+        "color": "var(--cat-rest)",
+        "children": [
+          {
+            "id": "rest.sleep",
+            "label": "Sleep"
+          },
+          {
+            "id": "rest.nap",
+            "label": "Nap"
+          },
+          {
+            "id": "rest.idle",
+            "label": "Idle Time"
+          },
+          {
+            "id": "rest.other",
+            "label": "Other Rest"
+          }
+        ]
+      }
+    ],
+    "eventNodes": [
+      {
+        "id": "evt.breakfast",
+        "label": "Breakfast",
+        "aliases": [
+          "breakfast",
+          "morning meal"
+        ],
+        "parentId": "life.meal",
+        "status": "official"
+      },
+      {
+        "id": "evt.lunch",
+        "label": "Lunch",
+        "aliases": [
+          "lunch",
+          "midday meal"
+        ],
+        "parentId": "life.meal",
+        "status": "official"
+      },
+      {
+        "id": "evt.dinner",
+        "label": "Dinner",
+        "aliases": [
+          "dinner",
+          "evening meal"
+        ],
+        "parentId": "life.meal",
+        "status": "official"
+      },
+      {
+        "id": "evt.shower",
+        "label": "Shower",
+        "aliases": [
+          "shower",
+          "wash up"
+        ],
+        "parentId": "life.hygiene",
+        "status": "official"
+      },
+      {
+        "id": "evt.cleanup",
+        "label": "Cleanup",
+        "aliases": [
+          "room reset",
+          "tidying up"
+        ],
+        "parentId": "life.chores",
+        "status": "official"
+      },
+      {
+        "id": "evt.commute",
+        "label": "Commute",
+        "aliases": [
+          "commute",
+          "ride to work",
+          "ride home"
+        ],
+        "parentId": "travel.commute",
+        "status": "official"
+      },
+      {
+        "id": "evt.focus_coding",
+        "label": "Focused Coding",
+        "aliases": [
+          "coding",
+          "shipping code",
+          "implementation"
+        ],
+        "parentId": "work.coding",
+        "status": "official"
+      },
+      {
+        "id": "evt.meeting",
+        "label": "Meeting",
+        "aliases": [
+          "meeting",
+          "sync"
+        ],
+        "parentId": "work.meeting",
+        "status": "official"
+      },
+      {
+        "id": "evt.reading",
+        "label": "Reading",
+        "aliases": [
+          "reading",
+          "read a book"
+        ],
+        "parentId": "study.reading",
+        "status": "official"
+      },
+      {
+        "id": "evt.learning",
+        "label": "Course Study",
+        "aliases": [
+          "course",
+          "studying",
+          "lesson"
+        ],
+        "parentId": "study.course",
+        "status": "official"
+      },
+      {
+        "id": "evt.walk",
+        "label": "Walk",
+        "aliases": [
+          "walk",
+          "go for a walk"
+        ],
+        "parentId": "exercise.walk",
+        "status": "official"
+      },
+      {
+        "id": "evt.workout",
+        "label": "Workout",
+        "aliases": [
+          "workout",
+          "training"
+        ],
+        "parentId": "exercise.workout",
+        "status": "official"
+      },
+      {
+        "id": "evt.watch_show",
+        "label": "Watch a Show",
+        "aliases": [
+          "watching a show",
+          "tv time"
+        ],
+        "parentId": "entertainment.video",
+        "status": "official"
+      },
+      {
+        "id": "evt.short_video",
+        "label": "Short Video Scroll",
+        "aliases": [
+          "short videos",
+          "reels",
+          "scrolling videos"
+        ],
+        "parentId": "entertainment.social_media",
+        "status": "official"
+      },
+      {
+        "id": "evt.phone_scroll",
+        "label": "Phone Scroll",
+        "aliases": [
+          "phone scrolling",
+          "doomscrolling"
+        ],
+        "parentId": "entertainment.social_media",
+        "status": "official"
+      },
+      {
+        "id": "evt.headache_rest",
+        "label": "Headache Recovery",
+        "aliases": [
+          "resting with a headache"
+        ],
+        "parentId": "health.rest",
+        "status": "official"
+      },
+      {
+        "id": "evt.medication",
+        "label": "Medication",
+        "aliases": [
+          "taking medicine",
+          "medication"
+        ],
+        "parentId": "health.medication",
+        "status": "official"
+      },
+      {
+        "id": "evt.hospital_visit",
+        "label": "Medical Visit",
+        "aliases": [
+          "clinic visit",
+          "hospital visit",
+          "doctor appointment"
+        ],
+        "parentId": "health.hospital",
+        "status": "official"
+      },
+      {
+        "id": "evt.chatting",
+        "label": "Chat",
+        "aliases": [
+          "chatting",
+          "replying to messages"
+        ],
+        "parentId": "social.chat",
+        "status": "official"
+      },
+      {
+        "id": "evt.sleep",
+        "label": "Sleep",
+        "aliases": [
+          "sleep",
+          "went to sleep"
+        ],
+        "parentId": "rest.sleep",
+        "status": "official"
+      },
+      {
+        "id": "evt.nap",
+        "label": "Nap",
+        "aliases": [
+          "nap",
+          "power nap"
+        ],
+        "parentId": "rest.nap",
+        "status": "official"
+      }
+    ]
+  }
+}

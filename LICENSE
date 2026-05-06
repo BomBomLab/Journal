@@ -1,0 +1,77 @@
+Journal Source-Available License
+
+Copyright (c) 2026 User
+
+This repository is source-available for personal, non-commercial use only.
+
+1. Scope
+
+The code, sample data, documentation, and other original material in this
+repository may be viewed, copied, run, and modified for personal,
+non-commercial purposes, subject to the conditions below.
+
+2. Attribution and Upstream Rights
+
+This repository includes or is derived in part from ideas, structures, and
+workflows connected to upstream projects and private tooling referenced in the
+repository documentation.
+
+All rights in third-party or upstream components remain with their respective
+authors and rightsholders. This license applies only to original material in
+this repository to the extent the licensor has the right to license it.
+
+You are responsible for complying with any applicable upstream license and
+attribution requirements when reusing or adapting this repository.
+
+3. Permitted Non-Commercial Use
+
+You may:
+
+- use this repository privately for personal study or experimentation
+- modify it for personal, non-commercial projects
+- share unmodified or modified copies for personal, non-commercial purposes,
+  provided that this license and attribution notices are preserved
+
+4. Commercial Use Prohibited
+
+You may not, without prior written permission from the copyright holder:
+
+- sell this repository or any modified version of it
+- use this repository in or for a paid product, paid service, commercial SaaS,
+  consulting delivery, or other commercial offering
+- sublicense, license, distribute, or provide this repository as part of a
+  commercial package
+- use the repository or substantial parts of it for commercial training
+  materials, paid templates, or commercial content bundles
+
+5. No Trademark or Brand Rights
+
+This license does not grant any right to use any name, mark, brand, logo, or
+identity associated with the repository, its author, or any upstream project,
+except as necessary for accurate attribution.
+
+6. Redistribution Conditions
+
+If you redistribute this repository or a modified version of it for permitted
+non-commercial purposes, you must:
+
+- include this license text
+- retain attribution to the repository author
+- not remove or misrepresent documented upstream attribution
+- clearly indicate that your version is modified, if applicable
+
+7. No Warranty
+
+THE REPOSITORY IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NONINFRINGEMENT. IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM,
+OUT OF, OR IN CONNECTION WITH THE REPOSITORY OR THE USE OR OTHER DEALINGS IN
+THE REPOSITORY.
+
+8. Contact
+
+If you need commercial use rights or believe any attribution, rights, or
+licensing statement in this repository should be adjusted, contact the
+repository maintainer.

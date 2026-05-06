@@ -1,0 +1,69 @@
+<svg width="1080" height="860" viewBox="0 0 1080 860" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0 0L10 5L0 10V0Z" fill="#A49D92"/>
+    </marker>
+    <style>
+      .title { font: 600 16px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #2F2A26; }
+      .body { font: 14px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #2F2A26; }
+      .small { font: 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #2F2A26; }
+      .line { stroke: #A49D92; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+      .panel-title { font: 600 14px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #4E4039; }
+    </style>
+  </defs>
+
+  <rect width="1080" height="860" rx="24" fill="#FCF8F4"/>
+
+  <rect x="56" y="56" width="968" height="748" rx="28" fill="#F7F0EA"/>
+
+  <text x="88" y="108" class="title">使用流程</text>
+  <text x="88" y="136" class="body">核心主线：微信聊天 → 自动生成 timeline → Journal 可视化成手帐</text>
+
+  <rect x="88" y="172" width="196" height="64" rx="18" fill="#BEDAE3"/>
+  <text x="186" y="212" text-anchor="middle" class="body">👤 用户入口</text>
+
+  <polygon points="396,172 504,172 560,204 504,236 396,236 340,204" fill="#BEDAE3"/>
+  <text x="450" y="210" text-anchor="middle" class="body">用户类型</text>
+
+  <rect x="642" y="154" width="320" height="128" rx="22" fill="#D7EFEF"/>
+  <text x="668" y="184" class="panel-title">新手 Onboarding</text>
+  <rect x="668" y="198" width="268" height="32" rx="14" fill="#BEDAE3"/>
+  <text x="802" y="219" text-anchor="middle" class="small">Step 1: 准备本地环境 / 科学网络 / 大模型</text>
+  <rect x="668" y="240" width="268" height="32" rx="14" fill="#BEDAE3"/>
+  <text x="802" y="261" text-anchor="middle" class="small">Step 2: 安装 codex / claudecode 并完成基础配置</text>
+
+  <rect x="642" y="312" width="320" height="52" rx="18" fill="#BEDAE3"/>
+  <text x="802" y="344" text-anchor="middle" class="body">熟练用户：已有 CLI / Claw 经验</text>
+
+  <rect x="392" y="314" width="116" height="48" rx="16" fill="#C4ED9A"/>
+  <text x="450" y="344" text-anchor="middle" class="body">项目搭建</text>
+
+  <rect x="170" y="404" width="560" height="96" rx="22" fill="#C4D4B1"/>
+  <text x="198" y="438" class="panel-title">项目搭建</text>
+  <rect x="198" y="452" width="504" height="32" rx="14" fill="#C4ED9A"/>
+  <text x="450" y="473" text-anchor="middle" class="small">Step 4: 安装 cyberboss + 接入微信 Claw</text>
+  <text x="450" y="492" text-anchor="middle" class="small">启动服务 / 绑定微信 / 建立消息收发</text>
+
+  <rect x="170" y="550" width="560" height="72" rx="20" fill="#FED5CF"/>
+  <text x="450" y="582" text-anchor="middle" class="body">Step 5: 系统自动生成 Timeline 数据</text>
+  <text x="450" y="604" text-anchor="middle" class="small">来源：所有微信聊天 · 自动抓取 + 打时间戳 + 结构化</text>
+
+  <rect x="170" y="664" width="560" height="66" rx="20" fill="#D3C7E6"/>
+  <text x="450" y="695" text-anchor="middle" class="body">Step 6: 安装 Journal，部署 UI 指向本地 timeline</text>
+  <text x="450" y="717" text-anchor="middle" class="small">Step 7: 读取 timeline → 聚合成日 / 周 / 月视图</text>
+
+  <rect x="786" y="550" width="182" height="180" rx="24" fill="#FFF8B5"/>
+  <text x="877" y="586" text-anchor="middle" class="body">🎉 最终状态</text>
+  <text x="820" y="626" class="body">• 聊天自动变成时间轴数据</text>
+  <text x="820" y="662" class="body">• 可回看、整理、复盘</text>
+
+  <path d="M284 204H330" class="line"/>
+  <path d="M560 204H628" class="line"/>
+  <path d="M560 204C620 204 620 338 634 338" class="line"/>
+  <path d="M802 282V304H508" class="line"/>
+  <path d="M802 338H520" class="line"/>
+  <path d="M450 362V392" class="line"/>
+  <path d="M450 500V538" class="line"/>
+  <path d="M450 622V652" class="line"/>
+  <path d="M730 697H774" class="line"/>
+</svg>

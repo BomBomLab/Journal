@@ -1,0 +1,307 @@
+{
+  "2026-04-25": [
+    {
+      "text": "reply messages",
+      "status": "done",
+      "source": "sanitized-sample"
+    },
+    {
+      "text": "review notes",
+      "status": "open",
+      "source": "sanitized-sample"
+    },
+    {
+      "text": "finish admin",
+      "status": "open",
+      "source": "sanitized-sample"
+    }
+  ],
+  "2026-04-26": [
+    {
+      "text": "reply messages",
+      "status": "done",
+      "source": "sanitized-sample"
+    }
+  ],
+  "2026-04-27": [
+    {
+      "text": "reply messages",
+      "status": "open",
+      "source": "sanitized-sample"
+    },
+    {
+      "text": "review notes",
+      "status": "done",
+      "source": "sanitized-sample"
+    },
+    {
+      "text": "finish admin",
+      "status": "open",
+      "source": "sanitized-sample"
+    },
+    {
+      "text": "plan next steps",
+      "status": "open",
+      "source": "sanitized-sample"
+    },
+    {
+      "text": "reading block",
+      "status": "open",
+      "source": "sanitized-sample"
+    },
+    {
+      "text": "exercise",
+      "status": "open",
+      "source": "sanitized-sample"
+    },
+    {
+      "text": "errands",
+      "status": "open",
+      "source": "sanitized-sample"
+    }
+  ],
+  "2026-04-28": [
+    {
+      "text": "reply messages",
+      "status": "open",
+      "source": "sanitized-sample"
+    },
+    {
+      "text": "review notes",
+      "status": "open",
+      "source": "sanitized-sample"
+    },
+    {
+      "text": "finish admin",
+      "status": "open",
+      "source": "sanitized-sample"
+    },
+    {
+      "text": "plan next steps",
+      "status": "open",
+      "source": "sanitized-sample"
+    },
+    {
+      "text": "reading block",
+      "status": "open",
+      "source": "sanitized-sample"
+    },
+    {
+      "text": "exercise",
+      "status": "open",
+      "source": "sanitized-sample"
+    },
+    {
+      "text": "errands",
+      "status": "open",
+      "source": "sanitized-sample"
+    },
+    {
+      "text": "tidy desk",
+      "status": "open",
+      "source": "sanitized-sample"
+    },
+    {
+      "text": "reply messages",
+      "status": "open",
+      "source": "sanitized-sample"
+    },
+    {
+      "text": "review notes",
+      "status": "open",
+      "source": "sanitized-sample"
+    },
+    {
+      "text": "finish admin",
+      "status": "open",
+      "source": "sanitized-sample"
+    }
+  ],
+  "2026-04-29": [
+    {
+      "text": "reply messages",
+      "status": "open",
+      "source": "sanitized-sample"
+    },
+    {
+      "text": "review notes",
+      "status": "open",
+      "source": "sanitized-sample"
+    }
+  ],
+  "2026-04-01": [
+    {
+      "text": "reply messages",
+      "status": "done",
+      "source": "sanitized-sample"
+    }
+  ],
+  "2026-04-02": [
+    {
+      "text": "review notes",
+      "status": "open",
+      "source": "sanitized-sample"
+    }
+  ],
+  "2026-04-03": [
+    {
+      "text": "finish admin",
+      "status": "open",
+      "source": "sanitized-sample"
+    }
+  ],
+  "2026-04-04": [
+    {
+      "text": "plan next steps",
+      "status": "done",
+      "source": "sanitized-sample"
+    }
+  ],
+  "2026-04-05": [
+    {
+      "text": "reading block",
+      "status": "open",
+      "source": "sanitized-sample"
+    }
+  ],
+  "2026-04-06": [
+    {
+      "text": "exercise",
+      "status": "open",
+      "source": "sanitized-sample"
+    }
+  ],
+  "2026-04-07": [
+    {
+      "text": "errands",
+      "status": "done",
+      "source": "sanitized-sample"
+    }
+  ],
+  "2026-04-08": [
+    {
+      "text": "tidy desk",
+      "status": "open",
+      "source": "sanitized-sample"
+    }
+  ],
+  "2026-04-09": [
+    {
+      "text": "reply messages",
+      "status": "open",
+      "source": "sanitized-sample"
+    }
+  ],
+  "2026-04-10": [
+    {
+      "text": "review notes",
+      "status": "done",
+      "source": "sanitized-sample"
+    }
+  ],
+  "2026-04-11": [
+    {
+      "text": "finish admin",
+      "status": "open",
+      "source": "sanitized-sample"
+    }
+  ],
+  "2026-04-12": [
+    {
+      "text": "plan next steps",
+      "status": "open",
+      "source": "sanitized-sample"
+    }
+  ],
+  "2026-04-13": [
+    {
+      "text": "reading block",
+      "status": "done",
+      "source": "sanitized-sample"
+    }
+  ],
+  "2026-04-14": [
+    {
+      "text": "exercise",
+      "status": "open",
+      "source": "sanitized-sample"
+    }
+  ],
+  "2026-04-15": [
+    {
+      "text": "errands",
+      "status": "open",
+      "source": "sanitized-sample"
+    }
+  ],
+  "2026-04-16": [
+    {
+      "text": "tidy desk",
+      "status": "done",
+      "source": "sanitized-sample"
+    }
+  ],
+  "2026-04-17": [
+    {
+      "text": "reply messages",
+      "status": "open",
+      "source": "sanitized-sample"
+    }
+  ],
+  "2026-04-18": [
+    {
+      "text": "review notes",
+      "status": "open",
+      "source": "sanitized-sample"
+    }
+  ],
+  "2026-04-19": [
+    {
+      "text": "finish admin",
+      "status": "done",
+      "source": "sanitized-sample"
+    }
+  ],
+  "2026-04-20": [
+    {
+      "text": "plan next steps",
+      "status": "open",
+      "source": "sanitized-sample"
+    }
+  ],
+  "2026-04-21": [
+    {
+      "text": "reading block",
+      "status": "open",
+      "source": "sanitized-sample"
+    }
+  ],
+  "2026-04-22": [
+    {
+      "text": "exercise",
+      "status": "done",
+      "source": "sanitized-sample"
+    }
+  ],
+  "2026-04-23": [
+    {
+      "text": "errands",
+      "status": "open",
+      "source": "sanitized-sample"
+    }
+  ],
+  "2026-04-24": [
+    {
+      "text": "tidy desk",
+      "status": "open",
+      "source": "sanitized-sample"
+    }
+  ],
+  "2026-04-30": [
+    {
+      "text": "exercise",
+      "status": "open",
+      "source": "sanitized-sample"
+    }
+  ]
+}

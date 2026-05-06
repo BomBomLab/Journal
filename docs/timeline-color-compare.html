@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Timeline Semantic Color Compare</title>
+  <style>
+    :root {
+      --bg: #f8f4ec;
+      --paper: #fffdf8;
+      --paper-2: #f4ede1;
+      --ink: #2f241c;
+      --ink-2: #6d5d50;
+      --rule: #e8ddcf;
+      --shadow: 0 18px 44px rgba(86, 61, 38, 0.10);
+    }
+
+    * { box-sizing: border-box; }
+
+    html,
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top, rgba(255, 255, 255, 0.75), transparent 42%),
+        linear-gradient(180deg, #fbf6ee 0%, var(--bg) 100%);
+      color: var(--ink);
+      font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    }
+
+    body {
+      padding: 40px 24px 56px;
+    }
+
+    .wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .card,
+    .matrix {
+      background: rgba(255, 253, 248, 0.9);
+      border: 1px solid rgba(181, 157, 130, 0.20);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero {
+      padding: 6px 4px 4px;
+      margin-bottom: 24px;
+    }
+
+    .eyebrow {
+      margin-bottom: 12px;
+      color: #9b7a5d;
+      font: 700 11px/1.2 ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(30px, 4vw, 50px);
+      line-height: 0.98;
+      font-weight: 600;
+    }
+
+    .hero p,
+    .card p,
+    .label,
+    .meta,
+    .code,
+    .note,
+    th,
+    td {
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .hero p {
+      max-width: 860px;
+      margin: 0;
+      color: var(--ink-2);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .card {
+      border-radius: 20px;
+      padding: 18px 20px;
+    }
+
+    .card h2 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--ink-2);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .palette-strip {
+      display: grid;
+      grid-template-columns: repeat(10, minmax(0, 1fr));
+      overflow: hidden;
+      border-radius: 18px;
+      margin-bottom: 24px;
+      border: 1px solid rgba(63, 42, 26, 0.08);
+      box-shadow: var(--shadow);
+    }
+
+    .strip-swatch {
+      min-height: 92px;
+      padding: 10px;
+      display: flex;
+      align-items: flex-end;
+      color: rgba(35, 27, 21, 0.78);
+      font: 700 11px/1.2 ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .matrix {
+      border-radius: 24px;
+      overflow: hidden;
+    }
+
+    thead th {
+      padding: 15px 18px;
+      text-align: left;
+      color: #8c7259;
+      background: linear-gradient(180deg, #fffdf9 0%, #f7efe5 100%);
+      border-bottom: 1px solid var(--rule);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    tbody td {
+      padding: 16px 18px;
+      border-bottom: 1px solid rgba(232, 221, 207, 0.72);
+      vertical-align: top;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .cat {
+      min-width: 160px;
+    }
+
+    .label {
+      display: block;
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .meta,
+    .note {
+      color: var(--ink-2);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .swatches {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .swatch {
+      min-width: 146px;
+    }
+
+    .chip {
+      height: 54px;
+      border-radius: 16px;
+      border: 1px solid rgba(63, 42, 26, 0.08);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.42),
+        0 8px 18px rgba(77, 50, 27, 0.08);
+      display: flex;
+      align-items: flex-end;
+      padding: 10px 12px;
+      font-size: 12px;
+      font-style: italic;
+      overflow: hidden;
+    }
+
+    .code {
+      margin-top: 7px;
+      color: var(--ink-2);
+      font-size: 12px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 7px 11px;
+      margin-bottom: 8px;
+      font: 700 12px/1 ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      white-space: nowrap;
+    }
+
+    .changed {
+      background: #fff7df;
+      color: #7e6530;
+    }
+
+    .kept {
+      background: #edf6ef;
+      color: #426246;
+    }
+
+    .footer {
+      margin-top: 18px;
+      color: var(--ink-2);
+      font: 13px/1.6 ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.94em;
+    }
+
+    @media (max-width: 980px) {
+      body {
+        padding: 28px 16px 44px;
+      }
+
+      .summary,
+      .palette-strip {
+        grid-template-columns: 1fr;
+      }
+
+      table,
+      thead,
+      tbody,
+      tr,
+      th,
+      td {
+        display: block;
+      }
+
+      thead {
+        display: none;
+      }
+
+      tbody tr {
+        padding: 18px 18px 6px;
+        border-bottom: 1px solid rgba(232, 221, 207, 0.72);
+      }
+
+      tbody tr:last-child {
+        border-bottom: 0;
+      }
+
+      tbody td {
+        border: 0;
+        padding: 0 0 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">色板校对</div>
+      <h1>Journal Timeline 语义配色</h1>
+      <p>
+        Journal 的时间轴色系以自然、低饱和、纸张感为基础，让一天里的事件像手帐贴纸一样清楚但不刺眼。
+        工作和学习保持冷静的蓝绿色系，健康与照护使用柔和植物色，运动使用带日光感的黄色，
+        休息和生活则靠近温暖纸色，让长时间浏览时依然安静、舒展。
+      </p>
+    </section>
+
+    <section class="summary">
+      <article class="card">
+        <h2>Natural Life</h2>
+        <p><code>Rest</code>、<code>Life</code> 和 <code>Health</code> 靠近纸张、奶油和植物色，负责承托一天的基本节奏；它们应该安静、不突出。</p>
+      </article>
+      <article class="card">
+        <h2>Warm Activities</h2>
+        <p><code>Exercise</code>、<code>Travel</code>、<code>Entertainment</code>、<code>Social</code> 和 <code>Care</code> 使用更有温度的黄色、桃色、粉色与淡紫色，表达身体启动、移动、开心和关系照护。</p>
+      </article>
+      <article class="card">
+        <h2>Calm Productivity</h2>
+        <p><code>Work</code> 与 <code>Study</code> 归入冷静的蓝绿色系：work 更结构化，study 更中性平静，适合长时间专注和复盘。</p>
+      </article>
+    </section>
+
+    <section class="palette-strip" id="paletteStrip" aria-label="Journal 当前 timeline 色板"></section>
+
+    <section class="matrix">
+      <table>
+        <thead>
+          <tr>
+            <th>分类</th>
+            <th>Cyberboss 原始色</th>
+            <th>Journal 当前色</th>
+            <th>语义说明</th>
+          </tr>
+        </thead>
+        <tbody id="paletteRows"></tbody>
+      </table>
+    </section>
+
+    <p class="footer">
+      来源：
+      <code>src/build-journal-data.js</code>,
+      <code>docs/timeline-event-design.md</code>.
+    </p>
+  </main>
+
+  <script>
+    const before = {
+      life: { label: 'Life', fill: '#ff8f7a', ink: '#4b2118', role: '吃饭、洗漱、家务、日常生活节奏' },
+      work: { label: 'Work', fill: '#ffb84d', ink: '#4f2f00', role: '专注、会议、沟通、结构化产出' },
+      study: { label: 'Study', fill: '#7bc96f', ink: '#183514', role: '阅读、课程、复盘和学习' },
+      exercise: { label: 'Exercise', fill: '#4fcfff', ink: '#08374b', role: '运动、健身、身体激活' },
+      entertainment: { label: 'Entertainment', fill: '#ff74c8', ink: '#4d1537', role: '观影、刷手机、休闲媒体' },
+      health: { label: 'Health', fill: '#52d6c3', ink: '#103832', role: '恢复、症状处理、医疗相关事项' },
+      social: { label: 'Social', fill: '#a67cff', ink: '#2d1d57', role: '电话、聊天、见面和关系时间' },
+      care: { label: 'Care', fill: '#ff9eb5', ink: '#542030', role: '宠物、家庭、自我照护支持动作' },
+      travel: { label: 'Travel', fill: '#6fa8ff', ink: '#16345d', role: '通勤、交通、场景切换' },
+      rest: { label: 'Rest', fill: '#8a84ff', ink: '#272456', role: '睡眠、小憩、低强度恢复' }
+    };
+
+    const after = {
+      life: { label: 'Life', fill: '#F4E7CE', ink: '#6d5a2d', note: '转为温暖的生活纸色，稳定日常节奏，不抢主线。' },
+      work: { label: 'Work', fill: '#BEDAE3', ink: '#3d5a64', note: '从高能橙色转为冷静蓝色，表达结构、专注和产出。' },
+      study: { label: 'Study', fill: '#C6DBDA', ink: '#3d5f5d', note: '和 work 同属蓝色系，但更中性、更平静，适合阅读和学习记录。' },
+      exercise: { label: 'Exercise', fill: '#F3EA93', ink: '#6b6426', note: '使用柔和日光黄，表达轻盈、身体启动和户外感。' },
+      entertainment: { label: 'Entertainment', fill: '#FFD1DB', ink: '#7a3e4c', note: '柔和粉色保留轻松、休闲、娱乐感，避免过亮。' },
+      health: { label: 'Health', fill: '#C4D4B1', ink: '#4d5b3a', note: '护理感绿色对应恢复、症状和身体状态，比原始青色更柔和。' },
+      social: { label: 'Social', fill: '#D3C7E6', ink: '#4b4266', note: '保留紫色关系语义，但降低饱和度，更像手帐贴纸。' },
+      care: { label: 'Care', fill: '#ECD5E3', ink: '#6a4458', note: '淡紫粉用于宠物、家庭、自我照护，与 health 区分。' },
+      travel: { label: 'Travel', fill: '#F1B598', ink: '#6d3a1e', note: '暖橙色作为场景转换和移动线索。' },
+      rest: { label: 'Rest', fill: '#FDECDF', ink: '#7a5a40', note: '接近纸底的浅色，保持睡眠和休息的低张力。' }
+    };
+
+    const order = ['rest', 'life', 'health', 'exercise', 'travel', 'entertainment', 'social', 'care', 'work', 'study'];
+    const rows = document.getElementById('paletteRows');
+    const strip = document.getElementById('paletteStrip');
+
+    function chip(item, text) {
+      return `
+        <div class="swatch">
+          <div class="chip" style="background:${item.fill};color:${item.ink};">${text}</div>
+          <div class="code">fill: <code>${item.fill}</code><br />ink: <code>${item.ink}</code></div>
+        </div>
+      `;
+    }
+
+    for (const id of order) {
+      const oldItem = before[id];
+      const newItem = after[id];
+      const isChanged = oldItem.fill !== newItem.fill || oldItem.ink !== newItem.ink;
+
+      strip.insertAdjacentHTML('beforeend', `
+        <div class="strip-swatch" style="background:${newItem.fill};color:${newItem.ink};">${newItem.label}</div>
+      `);
+
+      rows.insertAdjacentHTML('beforeend', `
+        <tr>
+          <td class="cat">
+            <span class="label">${newItem.label}</span>
+            <span class="meta"><code>${id}</code><br />${oldItem.role}</span>
+          </td>
+          <td><div class="swatches">${chip(oldItem, `Cyberboss ${newItem.label}`)}</div></td>
+          <td><div class="swatches">${chip(newItem, `Journal ${newItem.label}`)}</div></td>
+          <td>
+            <span class="badge ${isChanged ? 'changed' : 'kept'}">${isChanged ? '已调整' : '保留'}</span>
+            <div class="note">${newItem.note}</div>
+          </td>
+        </tr>
+      `);
+    }
+  </script>
+</body>
+</html>
